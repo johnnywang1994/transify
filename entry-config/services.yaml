@@ -1,0 +1,12 @@
+http:
+  services:
+    frontend:
+      loadBalancer:
+        servers:
+        - url: {{env "FRONTEND_INTERNAL_HOST"}}
+
+    api:
+      loadBalancer:
+        passHostHeader: false
+        servers:
+        - url: {{env "BACKEND_INTERNAL_HOST"}}
